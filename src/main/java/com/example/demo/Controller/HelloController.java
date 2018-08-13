@@ -32,10 +32,9 @@ public class HelloController {
     }
 
     @RequestMapping("/testRest")
-    public String testRest(){
-        ResponseEntity<String> responseEntity=restTemplate.getForEntity("https://mini.eastday.com/json/index/indexMergeNews.json?callback=indexMergeNews&_=1534171368541",String.class);
-        String reutrnStr =  restTemplate.getForObject("https://mini.eastday.com/json/index/indexMergeNews.json?callback=indexMergeNews&_=1534171368541",String.class);
-        return reutrnStr;
+    public List<HashMap> testRest(){
+        List<HashMap> result =  restTemplate.getForObject("https://www.fengke.club/GeekMart/course/list.json?orderType=1",List.class);
+        return result;
     }
 
     @RequestMapping("/getUser")
